@@ -34,13 +34,14 @@ typedef enum
 class MyQueue
 {
 	int32_t _Element[_Element_MaxSize];
-	uint16_t _First_Index;
-	uint16_t _Last_Index;
-
-	uint16_t _Size;
-	uint16_t _MaxSize;
 	int64_t _Sum;
 	int32_t _Average;
+
+	int32_t _First_Index;
+	int32_t _Last_Index;
+	int32_t _Size;
+	int32_t _MaxSize;
+
 	uint8_t _State;
 	void _Enqueue(int32_t Element);
 	void _Dequeue();
