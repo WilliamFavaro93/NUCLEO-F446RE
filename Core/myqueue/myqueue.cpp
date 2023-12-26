@@ -45,7 +45,7 @@ void MyQueue::_State_Update()
 	_State |= (_Size == 0)? 		MYQUEUE_STATE_EMPTY : 0;
 	_State |= (_Size == _MaxSize)? 	MYQUEUE_STATE_FULL : 0;
 
-	int32_t _Average_temp = (uint32_t)(_Sum/_Size);
+	int32_t _Average_temp = (int32_t)(_Sum/_Size);
 	_Average = (!(_State & MYQUEUE_STATE_EMPTY))? (_Average_temp) : 0;
 }
 /* Public Function -----------------------------------------------------------*/

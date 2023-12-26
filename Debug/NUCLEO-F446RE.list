@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000030  00000000  00000000  0002000c  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000accf  00000000  00000000  0002003c  2**0
+ 12 .debug_info   0000acb7  00000000  00000000  0002003c  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 00001e6b  00000000  00000000  0002ad0b  2**0
+ 13 .debug_abbrev 00001e6b  00000000  00000000  0002acf3  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 00000860  00000000  00000000  0002cb78  2**3
+ 14 .debug_aranges 00000860  00000000  00000000  0002cb60  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 00000798  00000000  00000000  0002d3d8  2**3
+ 15 .debug_ranges 00000798  00000000  00000000  0002d3c0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  000239d2  00000000  00000000  0002db70  2**0
+ 16 .debug_macro  000239d2  00000000  00000000  0002db58  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000bbe6  00000000  00000000  00051542  2**0
+ 17 .debug_line   0000bbe6  00000000  00000000  0005152a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000d174a  00000000  00000000  0005d128  2**0
+ 18 .debug_str    000d174a  00000000  00000000  0005d110  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  0012e872  2**0
+ 19 .comment      00000053  00000000  00000000  0012e85a  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000020d8  00000000  00000000  0012e8c8  2**2
+ 20 .debug_frame  000020d8  00000000  00000000  0012e8b0  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1894,7 +1894,7 @@ void MyQueue::_State_Update()
  8000ddc:	687b      	ldr	r3, [r7, #4]
  8000dde:	f883 242c 	strb.w	r2, [r3, #1068]	; 0x42c
 
-	int32_t _Average_temp = (uint32_t)(_Sum/_Size);
+	int32_t _Average_temp = (int32_t)(_Sum/_Size);
  8000de2:	687b      	ldr	r3, [r7, #4]
  8000de4:	f503 6382 	add.w	r3, r3, #1040	; 0x410
  8000de8:	e9d3 0100 	ldrd	r0, r1, [r3]
