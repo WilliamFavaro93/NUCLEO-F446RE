@@ -1894,7 +1894,7 @@ void MyQueue::_State_Update()
  8000ddc:	687b      	ldr	r3, [r7, #4]
  8000dde:	f883 242c 	strb.w	r2, [r3, #1068]	; 0x42c
 
-	uint32_t _Average_temp = (uint32_t)(_Sum/_Size);
+	int32_t _Average_temp = (uint32_t)(_Sum/_Size);
  8000de2:	687b      	ldr	r3, [r7, #4]
  8000de4:	f503 6382 	add.w	r3, r3, #1040	; 0x410
  8000de8:	e9d3 0100 	ldrd	r0, r1, [r3]
