@@ -24,18 +24,18 @@ TEST(average_test_group, simple_test)
 	Queue.Enable = 1;
 	Queue.Init(100);
 
-	CHECK_EQUAL(Queue.State_Get(), (MYQUEUE_STATE_INIT|MYQUEUE_STATE_ENABLE|MYQUEUE_STATE_EMPTY));
-
 	while(Queue.State_Get() & MYQUEUE_STATE_FULL)
 		Queue.Insert(1000);
 
-    CHECK_EQUAL(Queue.State_Get(), (MYQUEUE_STATE_INIT|MYQUEUE_STATE_ENABLE|MYQUEUE_STATE_FULL));
+    CHECK_EQUAL(Queue.State_Get(), 11);
 }
 
 // Test null array
-//TEST(average_test_group, null_test)
-//{
-//    float array[1];
-//    float avg = average(array, 0);
-//    CHECK_EQUAL(avg, 0.0);
-//}
+TEST(average_test_group, null_test)
+{
+	MyQueue Queue;
+	Queue.Enable = 1;
+	Queue.Init(100);
+
+	CHECK_EQUAL(Queue.State_Get(), 7);
+}
