@@ -1,6 +1,5 @@
 # Name of component under test
-COMPONENT_NAME =  myqueue
-#COMPONENT_NAME =  $(CURDIR)
+COMPONENT_NAME = average
 
 # Dynamically generate absolute paths
 # From https://matheusmbar.com/bugfree-robot/2019/04/05/makefile-first-test.html
