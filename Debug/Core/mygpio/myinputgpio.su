@@ -1,0 +1,2 @@
+myinputgpio.cpp:23:6:void MyInputGPIO::Init(GPIO_TypeDef*, uint16_t)	24	static
+myinputgpio.cpp:29:15:GPIO_PinState MyInputGPIO::PinState_Get()	16	static

@@ -1,0 +1,2 @@
+mygpio.c:34:6:MYGPIO_Init	24	static
+mygpio.c:46:6:MYGPIO_PinState_Update	16	static

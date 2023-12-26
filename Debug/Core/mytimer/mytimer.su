@@ -1,0 +1,3 @@
+mytimer.cpp:22:6:void MyTimer::Init(uint32_t)	16	static
+mytimer.cpp:29:6:void MyTimer::CountDown()	16	static
+mytimer.cpp:36:6:void MyTimer::Restart()	16	static
