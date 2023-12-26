@@ -14,10 +14,12 @@
   */
 
 /* Includes ------------------------------------------------------------------*/
-#ifndef MYQUEUE_HPP_
-#define MYQUEUE_HPP_
+#ifndef MYQUEUE_MYQUEUE_HPP_
+#define MYQUEUE_MYQUEUE_HPP_
 
 /* Defines -------------------------------------------------------------------*/
+#include <stdint.h>
+
 /* Variables -----------------------------------------------------------------*/
 const static uint16_t _Element_MaxSize = 260;
 
@@ -31,23 +33,25 @@ typedef enum
 
 class MyQueue
 {
-	uint32_t _Element[_Element_MaxSize];
+	int32_t _Element[_Element_MaxSize];
 	uint16_t _First_Index;
 	uint16_t _Last_Index;
 
 	uint16_t _Size;
 	uint16_t _MaxSize;
-	uint64_t _Sum;
-	uint32_t _Average;
+	int64_t _Sum;
+	int32_t _Average;
 	uint8_t _State;
-	void _Enqueue(uint32_t Element);
+	void _Enqueue(int32_t Element);
 	void _Dequeue();
-	void _UpdateState();
+	void _State_Update();
 public:
 	uint8_t Enable;
 	void Init(uint16_t MaxSize);
-	void Insert(uint32_t Element);
-	uint32_t Remove();
+	void Insert(int32_t Element);
+	void Remove();
+	int32_t Average_Get();
+	int32_t Last_Get();
 };
 
-#endif /* MYQUEUE_HPP_ */
+#endif /* MYQUEUE_MYQUEUE_HPP_ */

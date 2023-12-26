@@ -33,6 +33,7 @@ SUBDIRS := \
 Core/Src \
 Core/Startup \
 Core/mygpio \
+Core/myqueue \
 Core/mytimer \
 Drivers/STM32F4xx_HAL_Driver/Src \
 

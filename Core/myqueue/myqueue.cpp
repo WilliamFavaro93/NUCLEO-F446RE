@@ -19,51 +19,51 @@
 /* Defines -------------------------------------------------------------------*/
 /* Variables -----------------------------------------------------------------*/
 /* Private Function definition -----------------------------------------------*/
-/* Public Function -----------------------------------------------------------*/
-void MyQueue::Init(uint8_t MaxSize)
+void MyQueue::_Enqueue(int32_t Element)
 {
-	_MaxSize = MaxSize;
-
-	while(State & MYQUEUE_STATE_FULL) _Enqueue(0);
-	while(State & MYQUEUE_STATE_EMPTY) _Dequeue();
-
-	_State_Update();
-}
-
-void MyQueue::_Enqueue(uint32_t Element)
-{
-	_Last_Index++;
-	_Last_Index %= _MaxSize;
 	_Element[_Last_Index] = Element;
-	_Sum += Element;
-	_Size++;
+	_Sum += _Element[_Last_Index];
+
+	_Last_Index = (_Last_Index + 1) % _MaxSize;
+	_Size = _Size + 1;
 }
 
 void MyQueue::_Dequeue()
 {
 	_Sum -= _Element[_First_Index];
 	_Element[_First_Index] = 0;
-	_First_Index++;
-	_First_Index %= _MaxSize;
-	_Size--;
+
+	_First_Index = (_First_Index + 1) % _MaxSize;
+	_Size = _Size - 1;
 }
 
 void MyQueue::_State_Update()
 {
-	State = 0;
-	State |= (_MaxSize)? 			MYQUEUE_STATE_INIT : 0;
-	State |= (Enable)? 				MYQUEUE_STATE_ENABLE : 0;
-	State |= (!(_Size))? 			MYQUEUE_STATE_EMPTY : 0;
-	State |= (_Size == _MaxSize)? 	MYQUEUE_STATE_FULL : 0;
+	_State = 0;
+	_State |= (_MaxSize)? 			MYQUEUE_STATE_INIT : 0;
+	_State |= (Enable)? 			MYQUEUE_STATE_ENABLE : 0;
+	_State |= (_Size == 0)? 		MYQUEUE_STATE_EMPTY : 0;
+	_State |= (_Size == _MaxSize)? 	MYQUEUE_STATE_FULL : 0;
 
-	_Average = (!(State & MYQUEUE_STATE_EMPTY))? _Sum/_Size : 0;
+	_Average = (!(_State & MYQUEUE_STATE_EMPTY))? _Sum/_Size : 0;
+}
+/* Public Function -----------------------------------------------------------*/
+void MyQueue::Init(uint16_t MaxSize)
+{
+	_MaxSize = MaxSize;
+
+	while(_State & MYQUEUE_STATE_FULL) _Enqueue(0);
+	while(_State & MYQUEUE_STATE_EMPTY) _Dequeue();
+
+	_State_Update();
 }
 
 void MyQueue::Insert(int32_t Element)
 {
-	if(!((State & MYQUEUE_STATE_INIT) || (State & MYQUEUE_STATE_ENABLE))) return;
+	if(!(_State & MYQUEUE_STATE_INIT)) return;
+	if(!(Enable)) return;
 
-	if(State & MYQUEUE_STATE_FULL)
+	if(_State & MYQUEUE_STATE_FULL)
 		_Dequeue();
 	_Enqueue(Element);
 
@@ -72,20 +72,21 @@ void MyQueue::Insert(int32_t Element)
 
 void MyQueue::Remove()
 {
-	if(!((State & MYQUEUE_STATE_INIT) || (State & MYQUEUE_STATE_ENABLE))) return;
+	if(!(_State & MYQUEUE_STATE_INIT)) return;
+	if(!(Enable)) return;
 
-	if(!(State & MYQUEUE_STATE_EMPTY))
+	if(!(_State & MYQUEUE_STATE_EMPTY))
 		_Dequeue();
 
 	_State_Update();
 }
 
-uint32_t MyQueue::Average_Get()
+int32_t MyQueue::Average_Get()
 {
 	return _Average;
 }
 
-uint32_t MyQueue::Last_Get()
+int32_t MyQueue::Last_Get()
 {
 	return _Element[_Last_Index];
 }

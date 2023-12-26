@@ -11,6 +11,7 @@ RM := rm -rf
 -include sources.mk
 -include Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
 -include Core/mytimer/subdir.mk
+-include Core/myqueue/subdir.mk
 -include Core/mygpio/subdir.mk
 -include Core/Startup/subdir.mk
 -include Core/Src/subdir.mk

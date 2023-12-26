@@ -19,6 +19,9 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -28,7 +31,7 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
  C:/Users/William/STM32CubeIDE/workspace_1.8.0/NUCLEO-F446RE/Core/mygpio/myinputgpio.hpp \
  C:/Users/William/STM32CubeIDE/workspace_1.8.0/NUCLEO-F446RE/Core/mygpio/myoutputgpio.hpp \
  C:/Users/William/STM32CubeIDE/workspace_1.8.0/NUCLEO-F446RE/Core/mytimer/mytimer.hpp \
- C:/Users/William/STM32CubeIDE/workspace_1.8.0/NUCLEO-F446RE/Core/myqueue/myqueue.hpp
+ ../Core/Src/../myqueue/myqueue.hpp
 
 ../Core/Inc/main.h:
 
@@ -72,6 +75,12 @@ Core/Src/main.o: ../Core/Src/main.cpp ../Core/Inc/main.h \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h:
 
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h:
+
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h:
@@ -90,4 +99,4 @@ C:/Users/William/STM32CubeIDE/workspace_1.8.0/NUCLEO-F446RE/Core/mygpio/myoutput
 
 C:/Users/William/STM32CubeIDE/workspace_1.8.0/NUCLEO-F446RE/Core/mytimer/mytimer.hpp:
 
-C:/Users/William/STM32CubeIDE/workspace_1.8.0/NUCLEO-F446RE/Core/myqueue/myqueue.hpp:
+../Core/Src/../myqueue/myqueue.hpp:
