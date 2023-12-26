@@ -6,3 +6,4 @@ myqueue.cpp:62:6:void MyQueue::Insert(int32_t)	16	static
 myqueue.cpp:74:6:void MyQueue::Remove()	16	static
 myqueue.cpp:85:9:int32_t MyQueue::Average_Get()	16	static
 myqueue.cpp:90:9:int32_t MyQueue::Last_Get()	16	static
+myqueue.cpp:95:9:uint8_t MyQueue::State_Get()	16	static

@@ -91,5 +91,10 @@ int32_t MyQueue::Last_Get()
 {
 	return _Element[_Last_Index];
 }
+
+uint8_t MyQueue::State_Get()
+{
+	return _State;
+}
 /* Private Function ----------------------------------------------------------*/
 /* End of the file -----------------------------------------------------------*/

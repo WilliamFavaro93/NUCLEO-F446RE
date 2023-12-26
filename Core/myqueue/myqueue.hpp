@@ -53,6 +53,7 @@ public:
 	void Remove();
 	int32_t Average_Get();
 	int32_t Last_Get();
+	uint8_t State_Get();
 };
 
 #endif /* MYQUEUE_MYQUEUE_HPP_ */

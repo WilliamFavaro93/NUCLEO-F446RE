@@ -18,17 +18,21 @@ TEST_GROUP(average_test_group)
 };
 
 // Test the average function
-//TEST(average_test_group, simple_test)
-//{
-//
-//
-//
-//    float array[] = {-1.0, 0.0, 1.0, 2.0, 3.0};
-//    float avg = average(array, 5);
-//    CHECK_EQUAL(avg, 1.0);
-//}
-//
-//// Test null array
+TEST(average_test_group, simple_test)
+{
+	MyQueue Queue;
+	Queue.Enable = 1;
+	Queue.Init(100);
+
+	CHECK_EQUAL(Queue.State_Get(), (MYQUEUE_STATE_INIT|MYQUEUE_STATE_ENABLE|MYQUEUE_STATE_EMPTY));
+
+	while(Queue.State_Get() & MYQUEUE_STATE_FULL)
+		Queue.Insert(1000);
+
+    CHECK_EQUAL(Queue.State_Get(), (MYQUEUE_STATE_INIT|MYQUEUE_STATE_ENABLE|MYQUEUE_STATE_FULL));
+}
+
+// Test null array
 //TEST(average_test_group, null_test)
 //{
 //    float array[1];
